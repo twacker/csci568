@@ -11,15 +11,17 @@ SimpleSpreadsheetManager sm;
 String sUrl = "t6mq_WLV5c5uj6mUNSryBIA";
 String googleUser = "twacker@mymail.mines.edu";
 String googlePass = "dr.wacker";
+PFont label;
   
 void setup() {
   //This code happens once, right when our sketch is launched
  size(800,800);
  background(0);
  smooth();
+ label = createFont("Helvetica", 24);
  // get the list of numbers from google
  int[] numbers = getNumbers();
- colorGrid(numbers,50,50,70);
+ numsGrid(numbers,50,50,70);
 };
 
 void dots( int[] numbers){
@@ -70,6 +72,30 @@ void colorGrid(int[] nums, float x, float y, float s){
     colorMode(HSB);
     fill(counts[i] * 30, 255, 255, counts[i] * 30);
     rect((i % 10) * s, floor(i/10) * s,s,s);
+  };
+  popMatrix();
+};
+
+void numsGrid(int[] nums, float x, float y, float s){
+ // initate the counting array
+  int[] counts = new int[100];
+  for (int i = 0; i < 100; i ++){
+    counts[i] = 0;
+  };
+  //fill in the counting array
+  for(int i = 0; i < nums.length; i ++){
+    counts[nums[i]] ++;
+  };
+  // fill in the blocks
+  pushMatrix();
+  translate(x,y);
+  for(int i = 0; i < counts.length; i++){
+    colorMode(HSB);
+    fill(counts[i] * 30, 255, 255, counts[i] * 30);
+    textAlign(CENTER);
+    textFont(label);
+    textSize(s/2);
+    text(i, (i % 10) *s, floor(i/10) * s);
   };
   popMatrix();
 };
