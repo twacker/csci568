@@ -19,11 +19,7 @@ void setup() {
  smooth();
  // get the list of numbers from google
  int[] numbers = getNumbers();
- barGraph(numbers, 100);
- for(int i = 1; i < 7; i ++){
-   int[] randoms = getRandomNumbers(225);
-   barGraph(randoms, 100 + (i * 130));
- };
+ colorGrid(numbers,50,50,70);
 };
 
 void dots( int[] numbers){
@@ -55,6 +51,27 @@ void barGraph(int[] nums, float y){
    fill(counts[i] * 30, 255, 255);
    rect(i*8, y, 8, -counts[i] * 10);
  };
+};
+
+void colorGrid(int[] nums, float x, float y, float s){
+ // initate the counting array
+  int[] counts = new int[100];
+  for (int i = 0; i < 100; i ++){
+    counts[i] = 0;
+  };
+  //fill in the counting array
+  for(int i = 0; i < nums.length; i ++){
+    counts[nums[i]] ++;
+  };
+  // fill in the blocks
+  pushMatrix();
+  translate(x,y);
+  for(int i = 0; i < counts.length; i++){
+    colorMode(HSB);
+    fill(counts[i] * 30, 255, 255, counts[i] * 30);
+    rect((i % 10) * s, floor(i/10) * s,s,s);
+  };
+  popMatrix();
 };
 
 void draw() {
