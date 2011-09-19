@@ -63,12 +63,23 @@ double Cosine(double a[], double b[], int size){
 	val = n/(d1*d2);
 	return val;
 }
-
+int test(){
+	int size = 6;
+	double a[6] = {1,0,1,0,1,0};
+	double b[6] = {1,1,0,0,1,0};
+	if(Euclidean(a,b,size) != 1/(sqrt(3)+1)){return 0;}
+	if(SMC(a,b,size) != .5){return 0;}
+	if(Jaccard(a,b,size) != .25){return 0;}
+	if(Pearson(a,b,size) != 0){return 0;}
+	if(Cosine(a,b,size) != 1/sqrt(2)/2){return 0;}
+	return 1;
+}
 int main(){
 	//printf %lf is for double
 	int size = 6;
 	double a[6] = {1,0,1,0,1,0};
 	double b[6] = {1,1,0,0,1,0};
+	if(!test){printf("The test failed");}
 	printf("The arrays to be passed into the functions\nA        B\n");
 	int i;
 	for(i = 0; i < size; i ++){
