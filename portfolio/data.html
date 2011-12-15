@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+<title>Data & Data Quality</title>
+<meta name="keywords" content="Data Quality" />
+<meta name="description" content="A summery of the role of Data and Data Quality in the Data Mining process" />
+<meta name="author" content="Taylor Wacker" />
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" /> 
+<!--[if IE]>
+  <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+</head>
+<body>
+<div class="container">
+  <h1>Data Mining Portfolio</h1>
+  <h2>Data & Data Quality</h2>
+  <p>Data is undoubtedly the most important component in the data mining process. It is where all information is derived. The format and quality of the data determines what all can be done with it. Explaining the importance of quality is a lot easier that explaining the importance of the data itself. Therefore, I will mostly be referring to data quality when I mention data. I will also be commenting on data visualization and it's reliance to that data mining process. </p><p>
+Before I get into data quality I'd like to talk about types of data. A data set is comprised of a bunch of data objects. Every data object is comprised of attributes. These can be simple identifiers or more complex measurements or other distinctions. Most all attributes are put in one of four categories: nominal, ordinal, interval, and ratio. And each of these four types can be put into one of two categories: qualitative and quantitative. </p><p>
+A quantitative attribute is anything that is made important by it's numerical value. This could be something such as temperature or calendar dates. The numerical value holds more importance based on what number is assigned that the number itself. Looking at calendar dates is a good example of interval data. The distance between the values holds importance. However this is different from ratio data in that the ratio of one date to another holds no importance. The second of January doesn't have twice the value of the first of January. In ratio data the multiplicative factor that compares one value to another has a hidden meaning. 1000 degrees Kelvin is twice as hot as 500 degrees Kelvin. Ratio data tends to be more meaningful because of the scale factor that can provide another measurement for comparison where interval data doesn't proved this ability. </p><p>
+Qualitative attributes are those who's importance is derived almost exclusively from their name. Qualitative attributes manifest themselves as such things as colors or options like disagree, neutral, and agree, and while these can be converted to numerical values they are converted back in the end. The two categories of data that fit in here are nominal and ordinal. Nominal values are those in which the name itself holds all the importance. There is really only a comparison of equals or doesn't equal. The values can be the same and therefore hold a connection between to elements or they differ and that is all that can be said. Ordinal values have a little more information that they can provide. These often appear in the form of check boxes that have a range of choices. Do you agree, slightly agree, neutral, slightly disagree, or disagree. Of these options you can order them. Slightly agree appears between neutral and agree. So depending on how you want to define them you can make one value greater than another. This is easier seen with “on a scale 1 – 5, 1 being bad and 5 being good rate” where you feel 5 is better than 1. </p><p>
+The next thing to discuss is data quality. While it is very important to understand the kind of data you're manipulating it is arguable more important to recognize the quality that the given dataset is in. One common issue is missing values. If not properly dealt with this can cause serious headache when trying to analyze the data. There are three general ways to deal with this issue. The first is to ignore that Object that had the missing value. This works well with a very large dataset that contains relatively few attributes. The next method is to estimate the missing value. This can be done by assigning it the value of the mode or mean of the rest of the values or having a default measurement. The third option is to ignore the missing values and treat them as NULL or 0.  </p><p>
+Two other common issues are those of inconsistent values and duplicate data. Inconsistent values are those where you're expecting a value of a certain type or magnitude and get something else. Such as having an zip code containing 3 numbers rather than 5 or a name that is 12345 rather than Jimmy. These are important to note otherwise they will skew you're results in a way that makes  the results difficult to work interpret. Duplicate data occurs when you have a repeating of objects. An example of this would be in a petition having three occurrences of John Doe. These will skew the data into having more consistencies than actually occurs in the dataset.  </p><p>
+As mentioned before it is very important to understand the data you're working with as well as the quality of data given. An important process in any data mining undertaking it to first visit and explore the data. This involves looking at the data and meta data given, understand where it came from, how it was collected, how it's represented. Doing all of this you will come to know the dataset and know it's strengths and weaknesses. You will also have a better understanding of how to tackle the task in front of you. You'll know where the holes and pitfalls are going to be and have an idea of how to avoid them. </p><p>
+Data visualization is another very important aspect of Data Mining. No matter how well the data is mined or how great the results are if there the data isn't presented in a way that other people can understand the greatness of the data will go unnoticed. Most all the techniques learned in elementary school will apply well here. Box plots, stem-leaf plots, pie charts, bar graphs,  and histograms all make for an effective way to represent data collected. Some of these can be expanded into 3D. Another effective way to add dimensionality is to use colors effectively. An example of this is to use colors to represent temperature or population density on a map. The thing to be cautious of however, is having to much data in one place rather than separating it out. Don't expand a histogram into 3D if that will hide a smaller hill that you want to show people.  There are many ways to represent data. The most import thing to do is to represent it in a way that best conveys your point.
+  </p>
+  <div class="image">
+  <img src="num_grid.png" />
+  <div>A graphical representation of a survey results asking people for a random number 1 - 100</div>
+  </div>
+  <p></p>
+  <li><a href="index.html">HOME</a></li>
+</div>
+</body>
+</html>

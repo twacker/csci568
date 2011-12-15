@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+<title>The Badges Problem</title>
+<meta name="keywords" content="Badges" />
+<meta name="description" content="Applying the data mining process to the badges problem" />
+<meta name="author" content="Taylor Wacker" />
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" /> 
+<!--[if IE]>
+  <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+</head>
+<body>
+<div class="container">
+  <h1>Data Mining Portfolio</h1>
+  <h2>The Badges Problem</h2>
+  <p>So the first think I did was watch the episode of "The Office". After that I loaded the data onto my personal computer and brought it up in WEKA. I reviewed some summery statistics. This didn't really give me much information only that there were many more winners than losers. Also there was a misrepresented plus sign that created a third class. It was a simple fix though. </p>
+<p>From there I used the linux terminal to view the people in each group ( ie. cat winners_losers.csv | grep - ). This didn't provide to much relevant information. However it did allow me to test some basic theories very fast. These were ideas such as first name is shorter that the last name, first name starts with a vowel, and winners have some punctuation in their name.</p>
+<p>This was all done before Wednesday. On wednesday some more clues were given and or infered. Things such as Marc and Taylor were winners suggested it had nothing to do with the type of name. Also that there was not difference between Matt and Mattew suggested that name length played no role in the decision. Also by the fact that everyone got it and that the people who got it were doing the calculation in their head suggested that the deciding factor was something simple and probably only one leaf of depth in a dicision tree. </p>
+<p>So my next step was to appended the data to include other data fields such as first initial of first name, first initial of last name, first vowel, location of the first vowel, first initial of first name was before first initial of last name in alphabet, and a few others. I left out anything that had to do directly with length because of what was mentioned earlier. When I ran this data through WEKA I found that there was a big correlation between the first vowel location and winners and losers. I then looked through the data again on the terminal and noticed that all the winners had the second letter of their name as a vowel. This was also true for my name and Marc. </p>
+  <li><a href="index.html">HOME</a></li>
+</div>
+</body>
+</html>

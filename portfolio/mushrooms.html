@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+<title>The Classic Mushroom Dataset</title>
+<meta name="keywords" content="Mushroom" />
+<meta name="description" content="An example of the data mining process on the classic mushroom dataset" />
+<meta name="author" content="Taylor Wacker" />
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" /> 
+<!--[if IE]>
+  <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+</head>
+<body>
+<div class="container">
+  <h1>Data Mining Portfolio</h1>
+  <h2>The Classic Mushroom Dataset</h2>
+<p><h3>Preprocessing</h3></p> 
+<p>So the first thing I did was look over the data in a text editor. There was nothing that jumped out at me mostly because it was information overload. 23 elements is a lot to look at when it's all represented as single letters. I then looked over the meta-data sheet. The information there was helpful to know. The main thing I noted was that one of the characteristics had missing values. About a fourth of the data set was missing a value for stalk-root. I decided that the best rout for this was to simply remove that element from analysis. There are 21 other elements that should contain enough information and with that much data missing I though it allowed for enough uncertainty. I also didn't see the data set lending it's self to stick in a average or default value.</p>
+<p><h3>Summary Statistics</h3></p> 
+<p>I looked over the basic summary statistics. Because all the values were nominal there wasn't really averages or any good number statistics to look at. However you can simply look at modes of different characteristics and see what is abundant and how abundant it is.</p>
+<p><h3>Classification</h3></p> 
+<p>I used WEKA to analyze this data. I used a tree classifier using Simple Cart from the options and it created a Cart of 7 leaf nodes. It was 99.9 % effective at distinguishing poisonous from not poisonous. It turned out to be very similar to what was given in the meta data which was kind of boring however it was validating the information given. On trying to use other methods of classification I often crashed WEKA because it ran out of memory because of the size of the dataset and the limits of my computer. </p>
+<p><h3>Anomalies</h3></p> 
+<p>I didn't look into the anomalies because WEKA doesn't really support it and my computer is bitching about Knime. However I assume there are anomalies because with a real world dataset of over 8000 items there are bound to be outliers.</p>
+<p><h3>Association Rules</h3></p> 
+<p>Because I created a simple and through tree the branches can be rewrote into an effective set of rules to categorize the data. </p>
+  <li><a href="index.html">HOME</a></li>
+</div>
+</body>
+</html>

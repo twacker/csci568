@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+<title>Anomaly Detection</title>
+<meta name="keywords" content="Anomaly Detection" />
+<meta name="description" content="A summery of the role of Anomaly Detection in the Data Mining process" />
+<meta name="author" content="Taylor Wacker" />
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print" />
+<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" /> 
+<!--[if IE]>
+  <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+</head>
+<body>
+<div class="container">
+  <h1>Data Mining Portfolio</h1>
+  <h2>Anomaly Detection</h2>
+  <p>Anomaly Detection is the process of surveying a dataset and separating out data points that are uncharacteristic for the set. Most sources of anomalies occur from an mistake in the recording or transcribing of data. This will present itself as having a value of 234 for age or GARY for weight or other things of that type. It could also be 8234 for a zip code where a 3 was just forgotten to make it 83234. These types of mistakes are rather easy to detect as they will very clearly separate themselves from the other data points. Anomalies that are a little harder to detect are those within the correctly recorded dataset. The greatest challenge with these is that they may not be anomalies the may belong there and are just oddities. One common example is concerning credit card companies and vacations. They look at your data and see that you make most of your purchases in your hometown. So when you vacation in Hawaii and spend $800 for surfing lessons for you and your family that doesn't seem quite correct and they might generate a flag to ask you about it. So an anomaly was detected but it's not an anomaly because it is supposed to be in the dataset it's just different from the others. I will describe a few different methods for detecting anomalies including statistical approaches, proximity-based, density-based, and clustering-based.</p>
+  <p><h3>Statistical Approach</h3></p>
+  <p>The concept of this is very simple. Look at the data and see what is furthest from the others. Assuming the dataset is large enough if you chart all continuous attributes in a histogram a bell shape or series of bell shapes should emerge. If in doing this there is one or a handful of data points that are on the far edge of the graph away from the curves they are most probably outliers. If the data fits a normal curve then any data points that are more than 3 standard deviations away from the average are in in the 1% of data elements and can be considered outliers. The single biggest issue with this technique is its ability to be expanded across N dimensions. </p>
+  <p><h3>Proximity-Based Approach</h3></p>
+  <p>Proximity-based anomaly detection looks at how close one element is to all others. The most common form of this is the k-Nearest Neighbor approach. This approach calculates how far away the kth data point is. The points that have the farthest kNN are the most probable to be anomalies. The biggest challenge with this technique is picking the correct K. To big and all the values will be the same to small and you won't exclude a group of anomalies. The next big challenge is to use the correct distance metric. Different metrics will produce different results. Knowing the data will help pick the correct metric to use.</p>
+  <p><h3>Density-Based Approach</h3></p>
+  <p>Density-based anomaly detection closely follows the DBSCAN creation technique. In the DBSCAN points were labeled noise, core, or border. The border and core points were put into clusters where the noise points were removed. In anomaly detection those noise points are considered anomalies because they are in an area of low density. The issue with this technique is the same as was for DBSCAN. If an inappropriate distance metric is used or off proportioned Eps and MinPnts are selected everything or nothing could be a noise point and the algorithm is useless.   </p>
+  <p><h3>Cluster-Based Approach</h3></p>
+  <p>Cluster-Based anomaly detection is more or less a combination of the algorithms presented above. The concept is that anomalies are data points that don't belong strongly to any one cluster. The implementation for this is to apply a cluster algorithm and then find which data points are furthest from the group. Very similar to kNN but based on the cluster distance rather than simply the kth nearest neighbor. This algorithm is primarily hindered in the choosing of what clustering algorithm to use and suffers from the weaknesses of that algorithm therefore is different for each application. However if run over multiple clustering algorithms commonly selected anomaly points are probably anomalies. </p>
+
+
+  <li><a href="index.html">HOME</a></li>
+</div>
+</body>
+</html>
