@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head> 
 <title>2011 KDD Cup Challange, Track 1</title>
-<meta name="keywords" content="Data Quality" />
-<meta name="description" content="A summery of the role of Data and Data Quality in the Data Mining process" />
+<meta name="keywords" content="2011 KDD Cup Challange, Track 1" />
+<meta name="description" content="An example of the data mining process with the 2011 KDD Cup Challange, Track 1" />
 <meta name="author" content="Taylor Wacker" />
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <meta http-equiv="Content-Style-Type" content="text/css" />
@@ -17,14 +17,12 @@
 <body>
 <div class="container">
   <h1>Data Mining Portfolio</h1>
-  <h2>Data & Data Quality</h2>
-  <p class="introduction"> </p>
-  <pre class="code">
-#
-# the python implementation here
-#
-#
-  </pre>
+  <h2>2011 KDD Cup Challange, Track 1</h2>
+  <p>So like always, the first thing to be done with the data was to explore it. I looked into the different file structures of the data, and got familiar with how they were set up. To be honest I was kind of depressed with how it was done. I thought it would have been more rigid and formalized. This was primarily in the genre aspect. I feel like there are only a few dozen at most genres with maybe six branches off each of those, but definitely not the number that they had created. I felt that this would be the most challenging part of the project. I also noted the missing values and thought about how to work around them. I figured that in most cases there would be plenty of other sufficient data to just not use that aspect in calculations.  </p>
+<p>The next thing I did was decide how best to evaluate the data. I eventually settled on a simplistic model that looks at what you voted for your songs and what other people who voted similarly voted on the other item. So the first thing to do was create a new structure for the datasets. This basically added a user and a score to any item. So this iterates through the inputs and adds a new data pare to the preexisting data files. This is unfortunately slow and could most likely be improved with the use of a database but for the scope of this project I decided not to implement that. Once this had completed looking at the track data file you'd have a song and at the end have added a series of ratings for the songs.  </p>
+<p>When looking for a prediction on a new item the algorithm looks at all things rated by this user. Then for people were close to the same voting on this. I used a range of +- 10. From this list of other users you look at the things they voted and see if any of them have a vote for the prediction item. This includes looking at things like votes on songs that belong to a certain genre if you're looking at genera votes. With this list of “like” votes for this new item, I simply take the mean.  </p>
+<p>Looking at this algorithm it wasn't terrible. The big issue arose because the data wasn't big enough. Even though this is a large set there seemed to not be a large enough backing of “like” votes to get a good approximation of what similar taste were. The results were about 70% of responses were within +- 10 and 90% -+20 which is rather large but for the limitations of this project and the constants I was rather happy with the results. </p>
+
   <li><a href="index.html">HOME</a></li>
 </div>
 </body>
